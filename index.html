@@ -1,43 +1,201 @@
-<div class="grid">
-  <!-- Zbahis -->
-  <div class="card">
-    <span class="badge">Deneme Bonusu</span>
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-      <img src="zbahis logo.gif" alt="Zbahis Logo" style="width:40px;height:40px;object-fit:contain;border-radius:8px;background:#0f1a31">
-      <h3 style="margin:0">Zbahis</h3>
-    </div>
-    <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
-    <div class="actions-row">
-      <a class="btn" href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">Siteye Giriş Yap</a>
-      <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank" rel="noopener">Telegram</a>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mocker • Sponsorlar</title>
+  <meta name="description" content="Mocker tarafından önerilen siteler: Zbahis, Matadorbet, Fixbet." />
+  <style>
+    :root{
+      --bg:#0f1623; --panel:#121a2a; --card:#14233e; --text:#e7edf7; --muted:#9bb0ce;
+      --primary:#4cc9f0; --radius:12px; --border:#22365c; --ink:#0f1623;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
 
-  <!-- Matadorbet -->
-  <div class="card">
-    <span class="badge">Global • VIP</span>
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-      <img src="matador beyaz (4).png" alt="Matadorbet Logo" style="width:40px;height:40px;object-fit:contain;border-radius:8px;background:#0f1a31">
-      <h3 style="margin:0">Matadorbet</h3>
-    </div>
-    <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
-    <div class="actions-row">
-      <a class="btn" href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">Siteye Giriş Yap</a>
-      <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank" rel="noopener">Telegram</a>
-    </div>
-  </div>
+    /* Sidebar / Topbar */
+    .sidebar{width:220px;background:var(--panel);position:fixed;top:0;bottom:0;padding:14px 18px;border-right:1px solid #1e2b45;z-index:20}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo img{height:32px;width:32px;object-fit:contain;border-radius:8px}
+    .brand{font-size:20px;font-weight:800;line-height:1}
+    .brand-sub{font-size:12px;color:var(--muted)}
+    .main{margin-left:240px;padding:20px 22px 90px}
 
-  <!-- Fixbet -->
-  <div class="card">
-    <span class="badge">Mocker Öneriyor</span>
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-      <img src="Fixbet-Logo.png" alt="Fixbet Logo" style="width:40px;height:40px;object-fit:contain;border-radius:8px;background:#0f1a31">
-      <h3 style="margin:0">Fixbet</h3>
+    h2{margin:8px 0 14px}
+
+    /* Kartlar */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid var(--border)}
+    .card h3{margin:0}
+    .muted{color:var(--muted);margin:6px 0 12px}
+    .badge{display:inline-block;font-size:12px;color:var(--muted);border:1px solid #2a406a;padding:5px 8px;border-radius:999px;margin-bottom:8px}
+    .title-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+    .card-logo{width:40px;height:40px;object-fit:contain;border-radius:8px;background:#0f1a31}
+    .actions-row{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 16px;background:var(--primary);color:var(--ink);text-decoration:none;border-radius:10px;font-weight:800}
+    .btn.ghost{background:#0f1a31;color:var(--text);border:1px solid #27406b}
+
+    /* KEFİL LİSTESİ (alt alta) — BÜYÜK LOGOLAR */
+    .kefil-wrap{margin-top:26px}
+    .kefil-title{margin:6px 0 12px;font-size:20px;font-weight:800}
+    .kefil-list{display:grid;gap:12px}
+    .kefil-item{display:flex;align-items:center;gap:14px;background:#141f33;border:1px solid #213353;border-radius:14px;padding:14px}
+    .kefil-item img{width:72px;height:72px;object-fit:contain;border-radius:10px;background:#0f1a31}
+    .kefil-item h4{margin:0 0 4px}
+    .kefil-item .mini{color:var(--muted);font-size:12px;margin-top:2px}
+    .kefil-item a{margin-left:auto;padding:10px 14px;background:var(--primary);color:var(--ink);border-radius:10px;text-decoration:none;font-weight:800;white-space:nowrap}
+
+    /* GLOBAL SİTELER */
+    .global-wrap{margin-top:26px}
+    .section-head{display:flex;align-items:center;gap:10px;margin:6px 0 12px}
+    .section-head svg{width:22px;height:22px;opacity:.9}
+    .global-list{display:grid;gap:12px}
+    .global-item{display:flex;align-items:center;gap:14px;background:#141f33;border:1px solid #213353;border-radius:14px;padding:14px}
+    .global-item img{width:56px;height:56px;object-fit:contain;border-radius:10px;background:#0f1a31}
+    .global-item h4{margin:0 0 4px}
+    .global-item .mini{color:var(--muted);font-size:12px;margin-top:2px}
+    .global-item a{margin-left:auto;padding:10px 14px;background:var(--primary);color:var(--ink);border-radius:10px;text-decoration:none;font-weight:800;white-space:nowrap}
+
+    /* MOBİL */
+    @media (max-width: 820px){
+      .sidebar{position:sticky;top:0;height:56px;width:100%;border-right:none;border-bottom:1px solid #1e2b45;display:flex;align-items:center}
+      .main{margin:0;padding:12px 14px 80px}
+      .grid{grid-template-columns:1fr}
+      .btn, .btn.ghost{flex:1;text-align:center}
+      .logo img{height:28px;width:28px}
+      .brand{font-size:18px}
+      .kefil-item img{width:64px;height:64px}
+      .global-item img{width:52px;height:52px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Topbar/Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="mocker.jpg" alt="Mocker Logo"/>
+      <div>
+        <div class="brand">MOCKER</div>
+        <div class="brand-sub">Oynadığım Siteler</div>
+      </div>
     </div>
-    <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
-    <div class="actions-row">
-      <a class="btn" href="https://cutt.ly/arxVbegk" target="_blank" rel="noopener">Siteye Giriş Yap</a>
-      <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank" rel="noopener">Telegram</a>
+  </aside>
+
+  <!-- İçerik -->
+  <main class="main">
+    <h2>Önerdiğim Siteler</h2>
+    <div class="grid">
+      <!-- Zbahis (1. sırada ve logolu başlık) -->
+      <div class="card">
+        <span class="badge">Deneme Bonusu</span>
+        <div class="title-row">
+          <img src="zbahis logo.gif" alt="Zbahis Logo" class="card-logo">
+          <h3>Zbahis</h3>
+        </div>
+        <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
+        <div class="actions-row">
+          <a class="btn" href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">Siteye Giriş Yap</a>
+          <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+
+      <!-- Matadorbet (logolu başlık) -->
+      <div class="card">
+        <span class="badge">Global • VIP</span>
+        <div class="title-row">
+          <img src="matador beyaz (4).png" alt="Matadorbet Logo" class="card-logo">
+          <h3>Matadorbet</h3>
+        </div>
+        <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
+        <div class="actions-row">
+          <a class="btn" href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">Siteye Giriş Yap</a>
+          <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+
+      <!-- Fixbet (logolu başlık) -->
+      <div class="card">
+        <span class="badge">Mocker Öneriyor</span>
+        <div class="title-row">
+          <img src="Fixbet-Logo.png" alt="Fixbet Logo" class="card-logo">
+          <h3>Fixbet</h3>
+        </div>
+        <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
+        <div class="actions-row">
+          <a class="btn" href="https://cutt.ly/arxVbegk" target="_blank" rel="noopener">Siteye Giriş Yap</a>
+          <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+
+    <!-- KEFİL LİSTESİ (alt alta, büyük logolar) -->
+    <section class="kefil-wrap">
+      <div class="kefil-title">MOCKER KEFİL OLDUĞU SİTELER</div>
+      <div class="kefil-list">
+        <div class="kefil-item">
+          <img src="zbahis logo.gif" alt="Zbahis Logo">
+          <div>
+            <h4>Zbahis</h4>
+            <div class="mini">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
+          </div>
+          <a href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">Giriş</a>
+        </div>
+
+        <div class="kefil-item">
+          <img src="matador beyaz (4).png" alt="Matadorbet Logo">
+          <div>
+            <h4>Matadorbet</h4>
+            <div class="mini">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
+          </div>
+          <a href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">Giriş</a>
+        </div>
+
+        <div class="kefil-item">
+          <img src="Fixbet-Logo.png" alt="Fixbet Logo">
+          <div>
+            <h4>Fixbet</h4>
+            <div class="mini">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
+          </div>
+          <a href="https://cutt.ly/arxVbegk" target="_blank" rel="noopener">Giriş</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GLOBAL SİTELER -->
+    <section class="global-wrap">
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm7.93 9H16.9a18.7 18.7 0 00-1.2-6.02A8.01 8.01 0 0119.93 11zM12 4.06c1.14 1.6 2.02 3.94 2.35 6.94H9.65c.33-3 1.21-5.34 2.35-6.94zM4.07 13h3.03c.19 2.27.76 4.3 1.6 5.88A8.01 8.01 0 014.07 13zm3.03-2H4.07A8.01 8.01 0 018.7 5.14C7.86 6.72 7.29 8.75 7.1 11zM12 19.94c-1.14-1.6-2.02-3.94-2.35-6.94h4.7c-.33 3-1.21 5.34-2.35 6.94zM15.27 18.88c.84-1.58 1.41-3.6 1.6-5.88h3.06a8.01 8.01 0 01-4.66 5.88z"/></svg>
+        <h2 style="margin:0">GLOBAL SİTELER</h2>
+      </div>
+      <div class="global-list">
+        <div class="global-item">
+          <img src="zbahis logo.gif" alt="Zbahis Logo">
+          <div>
+            <h4>Zbahis</h4>
+            <div class="mini">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
+          </div>
+          <a href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">Giriş</a>
+        </div>
+
+        <div class="global-item">
+          <img src="matador beyaz (4).png" alt="Matadorbet Logo">
+          <div>
+            <h4>Matadorbet</h4>
+            <div class="mini">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
+          </div>
+          <a href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">Giriş</a>
+        </div>
+
+        <div class="global-item">
+          <img src="Fixbet-Logo.png" alt="Fixbet Logo">
+          <div>
+            <h4>Fixbet</h4>
+            <div class="mini">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
+          </div>
+          <a href="https://cutt.ly/arxVbegk" target="_blank" rel="noopener">Giriş</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
