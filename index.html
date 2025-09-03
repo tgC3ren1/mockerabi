@@ -12,61 +12,79 @@
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:Arial,system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
-    /* Sidebar */
-    .sidebar{width:220px;background:var(--panel);position:fixed;top:0;bottom:0;padding:20px;border-right:1px solid #1e2b45}
-    .logo{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+
+    /* Sidebar / Topbar */
+    .sidebar{width:220px;background:var(--panel);position:fixed;top:0;bottom:0;padding:14px 18px;border-right:1px solid #1e2b45;z-index:20}
+    .logo{display:flex;align-items:center;gap:10px}
     .logo img{height:32px;width:32px;object-fit:contain;border-radius:8px}
     .brand{font-size:20px;font-weight:800;line-height:1}
     .brand-sub{font-size:12px;color:var(--muted)}
-    /* Main */
-    .main{margin-left:240px;padding:20px 22px 80px}
-    h2{margin:6px 0 14px}
-    /* Cards */
+    .main{margin-left:240px;padding:20px 22px 90px}
+
+    h2{margin:8px 0 14px}
+    /* Kartlar */
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    @media (max-width:1200px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:700px){.grid{grid-template-columns:1fr;margin-left:-10px;margin-right:-10px}}
     .card{background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid var(--border)}
     .card h3{margin:0 0 8px}
-    .muted{color:var(--muted);margin:0 0 8px}
+    .muted{color:var(--muted);margin:0 0 12px}
     .badge{display:inline-block;font-size:12px;color:var(--muted);border:1px solid #2a406a;padding:5px 8px;border-radius:999px;margin-bottom:8px}
     .actions-row{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:10px 14px;background:var(--primary);color:var(--ink);text-decoration:none;border-radius:8px;font-weight:800}
+    .btn{display:inline-block;padding:12px 16px;background:var(--primary);color:var(--ink);text-decoration:none;border-radius:10px;font-weight:800}
     .btn.ghost{background:#0f1a31;color:var(--text);border:1px solid #27406b}
-    /* LOGOLU YÖNLENDİRME (alt bölüm) */
-    .logos-section{margin-top:22px}
-    .logos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media (max-width:1200px){.logos-grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:700px){.logos-grid{grid-template-columns:1fr}}
-    .logo-card{display:flex;align-items:center;gap:12px;background:#141f33;border:1px solid #213353;border-radius:14px;padding:12px}
-    .logo-card img{width:44px;height:44px;object-fit:contain;border-radius:8px;background:#0f1a31}
-    .logo-card h4{margin:0 0 4px}
-    .logo-card .mini{color:var(--muted);font-size:12px;margin-top:2px}
-    .logo-card a{margin-left:auto;padding:8px 12px;background:var(--primary);color:var(--ink);border-radius:8px;text-decoration:none;font-weight:800;white-space:nowrap}
+
+    /* KEFİL LİSTESİ (tam genişlik, alt alta) */
+    .kefil-wrap{margin-top:26px}
+    .kefil-title{margin:6px 0 12px;font-size:20px;font-weight:800}
+    .kefil-list{display:grid;gap:12px}
+    .kefil-item{display:flex;align-items:center;gap:12px;background:#141f33;border:1px solid #213353;border-radius:14px;padding:12px}
+    .kefil-item img{width:48px;height:48px;object-fit:contain;border-radius:8px;background:#0f1a31}
+    .kefil-item h4{margin:0 0 4px}
+    .kefil-item .mini{color:var(--muted);font-size:12px;margin-top:2px}
+    .kefil-item a{margin-left:auto;padding:10px 14px;background:var(--primary);color:var(--ink);border-radius:10px;text-decoration:none;font-weight:800;white-space:nowrap}
+
     /* Modal (Pop-up) */
     .modal-backdrop{position:fixed;inset:0;background:rgba(5,10,20,.65);display:flex;align-items:center;justify-content:center;z-index:50}
-    .modal{width:min(720px,92%);background:#162747;border-radius:20px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.4);border:1px solid #28406a}
-    .modal h3{margin:6px 0 8px}
+    .modal{width:min(720px,92%);max-height:85vh;overflow:auto;background:#162747;border-radius:20px;padding:18px 18px 16px;box-shadow:0 10px 30px rgba(0,0,0,.4);border:1px solid #28406a;position:relative}
+    .modal h3{margin:4px 0 8px}
     .modal p{color:var(--muted);line-height:1.55;margin:0 0 10px}
-    /* SLIDER */
-    .slider{position:relative;margin:12px 0;border:1px solid #243a63;border-radius:16px;background:#0d1730;overflow:hidden}
-    .slide-stage{position:relative;width:100%;height:0;padding-top:100%;} /* kare: 1:1 (1080x1080) */
+    .close-x{position:absolute;right:10px;top:10px;width:36px;height:36px;border-radius:10px;border:1px solid #27406b;background:#0f1a31;color:#e7edf7;font-weight:900;display:grid;place-items:center;cursor:pointer}
+    .close-x:active{transform:scale(.98)}
+
+    /* SLIDER (1080x1080 kare) */
+    .slider{position:relative;margin:10px 0 6px;border:1px solid #243a63;border-radius:16px;background:#0d1730;overflow:hidden}
+    .slide-stage{position:relative;width:100%;height:0;padding-top:100%;}
     .slide-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#0d1730}
     .arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(10,18,35,.7);border:1px solid #27406b;border-radius:10px;padding:8px 10px;color:#e7edf7;font-weight:900;cursor:pointer;user-select:none}
     .arrow:hover{background:rgba(10,18,35,.85)}
     .arrow.left{left:10px}
     .arrow.right{right:10px}
-    .dots{display:flex;gap:6px;justify-content:center;margin:10px 0 0}
+    .dots{display:flex;gap:6px;justify-content:center;margin:8px 0 0}
     .dot{width:8px;height:8px;border-radius:999px;background:#2a406a}
     .dot.active{background:#4cc9f0}
-    .modal-actions{display:flex;gap:10px;margin-top:14px}
+
+    .modal-actions{display:flex;gap:10px;margin-top:12px}
     .modal-actions button{flex:1;padding:12px;border-radius:12px;border:1px solid #27406b;font-weight:800;cursor:pointer;text-align:center;background:#0f1a31;color:var(--text)}
+
+    /* ====== MOBİL ADAPTASYON ====== */
+    @media (max-width: 820px){
+      .sidebar{position:sticky;top:0;height:56px;width:100%;border-right:none;border-bottom:1px solid #1e2b45;display:flex;align-items:center;justify-content:flex-start}
+      .main{margin:0;padding:12px 14px 80px}
+      .grid{grid-template-columns:1fr}
+      .btn, .btn.ghost{flex:1;text-align:center}
+      .logo img{height:28px;width:28px}
+      .brand{font-size:18px}
+      .kefil-item{padding:12px}
+      .kefil-item img{width:44px;height:44px}
+      .modal{width:94vw;max-height:85vh;padding:14px 14px 12px;border-radius:16px}
+      .arrow{padding:6px 8px}
+      .close-x{top:8px;right:8px;width:32px;height:32px}
+    }
   </style>
 </head>
 <body>
-  <!-- Sidebar -->
+  <!-- Topbar/Sidebar -->
   <aside class="sidebar">
     <div class="logo">
-      <!-- MOCKER yanındaki logo -->
       <img src="mocker.jpg" alt="Mocker Logo"/>
       <div>
         <div class="brand">MOCKER</div>
@@ -75,7 +93,7 @@
     </div>
   </aside>
 
-  <!-- Main -->
+  <!-- İçerik -->
   <main class="main">
     <h2>Önerdiğim Siteler</h2>
     <div class="grid">
@@ -111,11 +129,11 @@
       </div>
     </div>
 
-    <!-- LOGOLU YÖNLENDİRME (boş alanı doldurur) -->
-    <section class="logos-section">
-      <h2 style="margin-top:20px">Logolu Yönlendirmeler</h2>
-      <div class="logos-grid">
-        <div class="logo-card">
+    <!-- KEFİL LİSTESİ (alt alta, tam genişlik) -->
+    <section class="kefil-wrap">
+      <div class="kefil-title">MOCKER KEFİL OLDUĞU SİTELER</div>
+      <div class="kefil-list">
+        <div class="kefil-item">
           <img src="zbahis logo.gif" alt="Zbahis Logo">
           <div>
             <h4>Zbahis</h4>
@@ -123,7 +141,8 @@
           </div>
           <a href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">Giriş</a>
         </div>
-        <div class="logo-card">
+
+        <div class="kefil-item">
           <img src="matador beyaz (4).png" alt="Matadorbet Logo">
           <div>
             <h4>Matadorbet</h4>
@@ -131,7 +150,8 @@
           </div>
           <a href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">Giriş</a>
         </div>
-        <div class="logo-card">
+
+        <div class="kefil-item">
           <img src="Fixbet-Logo.png" alt="Fixbet Logo">
           <div>
             <h4>Fixbet</h4>
@@ -146,6 +166,7 @@
   <!-- Giriş Pop-up -->
   <div id="pop" class="modal-backdrop" role="dialog" aria-modal="true">
     <div class="modal">
+      <button class="close-x" aria-label="Kapat" onclick="document.getElementById('pop').style.display='none'">×</button>
       <div class="badge">Duyuru</div>
       <h3>Mocker • Resmi Yönlendirme Sayfası</h3>
       <p>Bu sayfada <strong>Fixbet</strong>, <strong>Matadorbet</strong> ve <strong>Zbahis</strong> için güncel giriş bağlantıları ve kampanya duyurularını bulabilirsiniz. Sosyal medya hesaplarımızın tamamı <strong>Telegram @mockerabi1</strong> üzerinden doğrulanır.</p>
@@ -161,7 +182,6 @@
       </div>
 
       <div class="modal-actions">
-        <!-- Telegram’a Git butonu kaldırıldı -->
         <button onclick="document.getElementById('pop').style.display='none'">Siteye Devam Et</button>
       </div>
     </div>
@@ -172,7 +192,7 @@
     const slides = [
       'fixbet deneme.jpg',
       'matador deneme.jpg',
-      'sosyal.jpg' // İstersen bunu 1080x1080 Zbahis görselinle değiştir: 'zbahis_deneme.jpg'
+      'sosyal.jpg'
     ];
     let i = 0, timer;
     const imgEl   = document.getElementById('slideImg');
@@ -186,15 +206,11 @@
         d.addEventListener('click', ()=>{ i = Number(d.dataset.i); show(); restart(); });
       });
     }
-    function show(){
-      imgEl.src = slides[i];
-      renderDots();
-    }
+    function show(){ imgEl.src = slides[i]; renderDots(); }
     function next(){ i = (i+1) % slides.length; show(); }
     function prev(){ i = (i-1+slides.length) % slides.length; show(); }
     function start(){ timer = setInterval(next, 3500); }
     function restart(){ clearInterval(timer); start(); }
-
     prevBtn.addEventListener('click', ()=>{ prev(); restart(); });
     nextBtn.addEventListener('click', ()=>{ next(); restart(); });
 
