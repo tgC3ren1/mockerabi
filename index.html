@@ -25,12 +25,14 @@
 
     /* Kartlar */
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid var(--border)}
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid var(--border);position:relative;overflow:hidden}
+    .badge{display:inline-block;font-size:12px;color:var(--muted);border:1px solid #2a406a;padding:5px 8px;border-radius:999px;margin-bottom:8px}
+    .title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}
+    .title-left{display:flex;align-items:center;gap:10px}
+    .card-logo{width:40px;height:40px;object-fit:contain;border-radius:8px;background:#0f1a31}
+    .brand-right img{width:160px;height:42px;object-fit:contain;opacity:.95;filter:drop-shadow(0 1px 0 rgba(0,0,0,.25))}
     .card h3{margin:0}
     .muted{color:var(--muted);margin:6px 0 12px}
-    .badge{display:inline-block;font-size:12px;color:var(--muted);border:1px solid #2a406a;padding:5px 8px;border-radius:999px;margin-bottom:8px}
-    .title-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-    .card-logo{width:40px;height:40px;object-fit:contain;border-radius:8px;background:#0f1a31}
     .actions-row{display:flex;gap:10px;flex-wrap:wrap}
     .btn{display:inline-block;padding:12px 16px;background:var(--primary);color:var(--ink);text-decoration:none;border-radius:10px;font-weight:800}
     .btn.ghost{background:#0f1a31;color:var(--text);border:1px solid #27406b}
@@ -64,6 +66,7 @@
       .btn, .btn.ghost{flex:1;text-align:center}
       .logo img{height:28px;width:28px}
       .brand{font-size:18px}
+      .brand-right img{width:120px;height:34px}
       .kefil-item img{width:64px;height:64px}
       .global-item img{width:52px;height:52px}
     }
@@ -85,12 +88,17 @@
   <main class="main">
     <h2>Önerdiğim Siteler</h2>
     <div class="grid">
-      <!-- Zbahis (1. sırada ve logolu başlık) -->
+      <!-- Zbahis (1. sıra, sol küçük logo + sağ geniş logo) -->
       <div class="card">
         <span class="badge">Deneme Bonusu</span>
         <div class="title-row">
-          <img src="zbahis logo.gif" alt="Zbahis Logo" class="card-logo">
-          <h3>Zbahis</h3>
+          <div class="title-left">
+            <img src="zbahis logo.gif" alt="Zbahis" class="card-logo">
+            <h3>Zbahis</h3>
+          </div>
+          <div class="brand-right">
+            <img src="zbahis logo.gif" alt="Zbahis geniş logo">
+          </div>
         </div>
         <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
         <div class="actions-row">
@@ -99,12 +107,17 @@
         </div>
       </div>
 
-      <!-- Matadorbet (logolu başlık) -->
+      <!-- Matadorbet -->
       <div class="card">
         <span class="badge">Global • VIP</span>
         <div class="title-row">
-          <img src="matador beyaz (4).png" alt="Matadorbet Logo" class="card-logo">
-          <h3>Matadorbet</h3>
+          <div class="title-left">
+            <img src="matador beyaz (4).png" alt="Matadorbet" class="card-logo">
+            <h3>Matadorbet</h3>
+          </div>
+          <div class="brand-right">
+            <img src="matador beyaz (4).png" alt="Matadorbet geniş logo">
+          </div>
         </div>
         <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
         <div class="actions-row">
@@ -113,12 +126,17 @@
         </div>
       </div>
 
-      <!-- Fixbet (logolu başlık) -->
+      <!-- Fixbet -->
       <div class="card">
         <span class="badge">Mocker Öneriyor</span>
         <div class="title-row">
-          <img src="Fixbet-Logo.png" alt="Fixbet Logo" class="card-logo">
-          <h3>Fixbet</h3>
+          <div class="title-left">
+            <img src="Fixbet-Logo.png" alt="Fixbet" class="card-logo">
+            <h3>Fixbet</h3>
+          </div>
+          <div class="brand-right">
+            <img src="Fixbet-Logo.png" alt="Fixbet geniş logo">
+          </div>
         </div>
         <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
         <div class="actions-row">
