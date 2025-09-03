@@ -8,7 +8,7 @@
   <style>
     :root{
       --bg:#0f1623; --panel:#121a2a; --card:#14233e; --text:#e7edf7; --muted:#9bb0ce;
-      --primary:#4cc9f0; --radius:12px;
+      --primary:#4cc9f0; --radius:12px; --border:#22365c; --ink:#0f1623;
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:Arial,system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
@@ -19,36 +19,47 @@
     .brand{font-size:20px;font-weight:800;line-height:1}
     .brand-sub{font-size:12px;color:var(--muted)}
     /* Main */
-    .main{margin-left:240px;padding:20px 22px 60px}
+    .main{margin-left:240px;padding:20px 22px 80px}
     h2{margin:6px 0 14px}
     /* Cards */
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    @media (max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:640px){.grid{grid-template-columns:1fr;margin-left:-10px;margin-right:-10px}}
-    .card{background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid #22365c}
+    @media (max-width:1200px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:700px){.grid{grid-template-columns:1fr;margin-left:-10px;margin-right:-10px}}
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid var(--border)}
     .card h3{margin:0 0 8px}
     .muted{color:var(--muted);margin:0 0 8px}
     .badge{display:inline-block;font-size:12px;color:var(--muted);border:1px solid #2a406a;padding:5px 8px;border-radius:999px;margin-bottom:8px}
     .actions-row{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:10px 14px;background:var(--primary);color:#0f1623;text-decoration:none;border-radius:8px;font-weight:800}
+    .btn{display:inline-block;padding:10px 14px;background:var(--primary);color:var(--ink);text-decoration:none;border-radius:8px;font-weight:800}
     .btn.ghost{background:#0f1a31;color:var(--text);border:1px solid #27406b}
+    /* LOGOLU YÖNLENDİRME (alt bölüm) */
+    .logos-section{margin-top:22px}
+    .logos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width:1200px){.logos-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:700px){.logos-grid{grid-template-columns:1fr}}
+    .logo-card{display:flex;align-items:center;gap:12px;background:#141f33;border:1px solid #213353;border-radius:14px;padding:12px}
+    .logo-card img{width:44px;height:44px;object-fit:contain;border-radius:8px;background:#0f1a31}
+    .logo-card h4{margin:0 0 4px}
+    .logo-card .mini{color:var(--muted);font-size:12px;margin-top:2px}
+    .logo-card a{margin-left:auto;padding:8px 12px;background:var(--primary);color:var(--ink);border-radius:8px;text-decoration:none;font-weight:800;white-space:nowrap}
     /* Modal (Pop-up) */
     .modal-backdrop{position:fixed;inset:0;background:rgba(5,10,20,.65);display:flex;align-items:center;justify-content:center;z-index:50}
-    .modal{width:min(620px,92%);background:#162747;border-radius:20px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.4);border:1px solid #28406a}
+    .modal{width:min(720px,92%);background:#162747;border-radius:20px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.4);border:1px solid #28406a}
     .modal h3{margin:6px 0 8px}
     .modal p{color:var(--muted);line-height:1.55;margin:0 0 10px}
-    .promo{display:grid;gap:12px;margin:12px 0}
-    .promo-img{width:100%; aspect-ratio:16/9; border-radius:14px; background:#0d1730; border:1px solid #243a63; display:grid; place-items:center; overflow:hidden}
-    .promo-img img{width:100%; height:100%; object-fit:cover; display:block}
-    .link-list{display:grid;gap:10px}
-    .link-card{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#0f1a31;border:1px solid #27406b;border-radius:12px;padding:12px}
-    .link-left{display:flex;align-items:center;gap:10px}
-    .link-left img{width:32px;height:32px;object-fit:contain;border-radius:6px;background:#152543}
-    .link-card a{font-weight:800;text-decoration:none;color:var(--text)}
+    /* SLIDER */
+    .slider{position:relative;margin:12px 0;border:1px solid #243a63;border-radius:16px;background:#0d1730;overflow:hidden}
+    .slide-stage{position:relative;width:100%;height:0;padding-top:100%;} /* kare: 1:1 (1080x1080) */
+    .slide-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#0d1730}
+    .arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(10,18,35,.7);border:1px solid #27406b;border-radius:10px;padding:8px 10px;color:#e7edf7;font-weight:900;cursor:pointer;user-select:none}
+    .arrow:hover{background:rgba(10,18,35,.85)}
+    .arrow.left{left:10px}
+    .arrow.right{right:10px}
+    .dots{display:flex;gap:6px;justify-content:center;margin:10px 0 0}
+    .dot{width:8px;height:8px;border-radius:999px;background:#2a406a}
+    .dot.active{background:#4cc9f0}
     .modal-actions{display:flex;gap:10px;margin-top:14px}
-    .modal-actions a,.modal-actions button{flex:1;padding:12px;border-radius:12px;border:none;font-weight:800;cursor:pointer;text-align:center}
-    .modal-actions a.primary{background:var(--primary);color:#0f1623;text-decoration:none}
-    .modal-actions button{background:#0f1a31;color:var(--text);border:1px solid #27406b}
+    .modal-actions button{flex:1;padding:12px;border-radius:12px;border:1px solid #27406b;font-weight:800;cursor:pointer;text-align:center;background:#0f1a31;color:var(--text)}
   </style>
 </head>
 <body>
@@ -99,6 +110,37 @@
         </div>
       </div>
     </div>
+
+    <!-- LOGOLU YÖNLENDİRME (boş alanı doldurur) -->
+    <section class="logos-section">
+      <h2 style="margin-top:20px">Logolu Yönlendirmeler</h2>
+      <div class="logos-grid">
+        <div class="logo-card">
+          <img src="zbahis logo.gif" alt="Zbahis Logo">
+          <div>
+            <h4>Zbahis</h4>
+            <div class="mini">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
+          </div>
+          <a href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">Giriş</a>
+        </div>
+        <div class="logo-card">
+          <img src="matador beyaz (4).png" alt="Matadorbet Logo">
+          <div>
+            <h4>Matadorbet</h4>
+            <div class="mini">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
+          </div>
+          <a href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">Giriş</a>
+        </div>
+        <div class="logo-card">
+          <img src="Fixbet-Logo.png" alt="Fixbet Logo">
+          <div>
+            <h4>Fixbet</h4>
+            <div class="mini">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
+          </div>
+          <a href="https://cutt.ly/arxVbegk" target="_blank" rel="noopener">Giriş</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Giriş Pop-up -->
@@ -108,55 +150,56 @@
       <h3>Mocker • Resmi Yönlendirme Sayfası</h3>
       <p>Bu sayfada <strong>Fixbet</strong>, <strong>Matadorbet</strong> ve <strong>Zbahis</strong> için güncel giriş bağlantıları ve kampanya duyurularını bulabilirsiniz. Sosyal medya hesaplarımızın tamamı <strong>Telegram @mockerabi1</strong> üzerinden doğrulanır.</p>
 
-      <!-- Deneme bonusu görsel alanı -->
-      <div class="promo">
-        <div class="promo-img">
-          <!-- Banner görselin -->
-          <img id="promoImg" src="sosyal.jpg" alt="Deneme Bonusu Banneri"/>
+      <!-- 1080x1080 SLIDER -->
+      <div class="slider" id="slider">
+        <div class="slide-stage">
+          <img id="slideImg" src="fixbet deneme.jpg" alt="Deneme Bonusu">
         </div>
-
-        <!-- 3 site link kartı + logo -->
-        <div class="link-list">
-          <div class="link-card">
-            <div class="link-left">
-              <img src="zbahis logo.gif" alt="Zbahis Logo" />
-              <div>
-                <strong>ZBAHİS</strong>
-                <div class="brand-sub">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
-              </div>
-            </div>
-            <a href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">Giriş</a>
-          </div>
-
-          <div class="link-card">
-            <div class="link-left">
-              <img src="matador beyaz (4).png" alt="Matadorbet Logo" />
-              <div>
-                <strong>Matadorbet</strong>
-                <div class="brand-sub">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
-              </div>
-            </div>
-            <a href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">Giriş</a>
-          </div>
-
-          <div class="link-card">
-            <div class="link-left">
-              <img src="Fixbet-Logo.png" alt="Fixbet Logo" />
-              <div>
-                <strong>Fixbet</strong>
-                <div class="brand-sub">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
-              </div>
-            </div>
-            <a href="https://cutt.ly/arxVbegk" target="_blank" rel="noopener">Giriş</a>
-          </div>
-        </div>
+        <div class="arrow left"  id="prevBtn">‹</div>
+        <div class="arrow right" id="nextBtn">›</div>
+        <div class="dots" id="dots"></div>
       </div>
 
       <div class="modal-actions">
-        <a class="primary" href="https://t.me/mockerabi1" target="_blank" rel="noopener">Telegram’a Git</a>
+        <!-- Telegram’a Git butonu kaldırıldı -->
         <button onclick="document.getElementById('pop').style.display='none'">Siteye Devam Et</button>
       </div>
     </div>
   </div>
+
+  <script>
+    // Basit slider (1080x1080 görseller; object-fit: contain ile güvenli)
+    const slides = [
+      'fixbet deneme.jpg',
+      'matador deneme.jpg',
+      'sosyal.jpg' // İstersen bunu 1080x1080 Zbahis görselinle değiştir: 'zbahis_deneme.jpg'
+    ];
+    let i = 0, timer;
+    const imgEl   = document.getElementById('slideImg');
+    const dotsEl  = document.getElementById('dots');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function renderDots(){
+      dotsEl.innerHTML = slides.map((_,idx)=>`<div class="dot ${idx===i?'active':''}" data-i="${idx}"></div>`).join('');
+      dotsEl.querySelectorAll('.dot').forEach(d=>{
+        d.addEventListener('click', ()=>{ i = Number(d.dataset.i); show(); restart(); });
+      });
+    }
+    function show(){
+      imgEl.src = slides[i];
+      renderDots();
+    }
+    function next(){ i = (i+1) % slides.length; show(); }
+    function prev(){ i = (i-1+slides.length) % slides.length; show(); }
+    function start(){ timer = setInterval(next, 3500); }
+    function restart(){ clearInterval(timer); start(); }
+
+    prevBtn.addEventListener('click', ()=>{ prev(); restart(); });
+    nextBtn.addEventListener('click', ()=>{ next(); restart(); });
+
+    // init
+    show(); start();
+  </script>
 </body>
 </html>
