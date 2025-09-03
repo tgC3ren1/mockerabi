@@ -32,12 +32,6 @@
     .actions-row{display:flex;gap:10px;flex-wrap:wrap}
     .btn{display:inline-block;padding:10px 14px;background:var(--primary);color:#0f1623;text-decoration:none;border-radius:8px;font-weight:800}
     .btn.ghost{background:#0f1a31;color:var(--text);border:1px solid #27406b}
-    /* Pills (Oynadığım Siteler) */
-    .pill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
-    @media (max-width:1024px){.pill-grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:640px){.pill-grid{grid-template-columns:1fr}}
-    .pill{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:999px;background:#101a2e;border:1px solid #20375f}
-    .pill a{padding:6px 10px;border-radius:8px;background:var(--primary);color:#0b1220;font-weight:800;text-decoration:none}
     /* Modal (Pop-up) */
     .modal-backdrop{position:fixed;inset:0;background:rgba(5,10,20,.65);display:flex;align-items:center;justify-content:center;z-index:50}
     .modal{width:min(620px,92%);background:#162747;border-radius:20px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.4);border:1px solid #28406a}
@@ -46,11 +40,10 @@
     .promo{display:grid;gap:12px;margin:12px 0}
     .promo-img{width:100%; aspect-ratio:16/9; border-radius:14px; background:#0d1730; border:1px solid #243a63; display:grid; place-items:center; overflow:hidden}
     .promo-img img{width:100%; height:100%; object-fit:cover; display:block}
-    .placeholder{opacity:.65;font-size:14px}
     .link-list{display:grid;gap:10px}
     .link-card{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#0f1a31;border:1px solid #27406b;border-radius:12px;padding:12px}
     .link-left{display:flex;align-items:center;gap:10px}
-    .link-left img{width:28px;height:28px;object-fit:contain;border-radius:6px;background:#152543}
+    .link-left img{width:32px;height:32px;object-fit:contain;border-radius:6px;background:#152543}
     .link-card a{font-weight:800;text-decoration:none;color:var(--text)}
     .modal-actions{display:flex;gap:10px;margin-top:14px}
     .modal-actions a,.modal-actions button{flex:1;padding:12px;border-radius:12px;border:none;font-weight:800;cursor:pointer;text-align:center}
@@ -62,8 +55,8 @@
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="logo">
-      <!-- MOCKER yazısının yanındaki logo: src'yi kendi PNG/SVG'nle değiştir -->
-      <img src="logo.png" alt="Mocker Logo"/>
+      <!-- MOCKER yanındaki logo -->
+      <img src="mocker.jpg" alt="Mocker Logo"/>
       <div>
         <div class="brand">MOCKER</div>
         <div class="brand-sub">Oynadığım Siteler</div>
@@ -79,7 +72,7 @@
       <div class="card">
         <span class="badge">Mocker Öneriyor</span>
         <h3>Fixbet</h3>
-        <p class="muted">30.000 TL Hoş Geldin Bonusu</p>
+        <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
         <div class="actions-row">
           <a class="btn" href="https://cutt.ly/arxVbegk" target="_blank" rel="noopener">Siteye Giriş Yap</a>
           <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank" rel="noopener">Telegram</a>
@@ -89,7 +82,7 @@
       <div class="card">
         <span class="badge">Global • VIP</span>
         <h3>Matadorbet</h3>
-        <p class="muted">30.000 TL Hoş Geldin Bonusu</p>
+        <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
         <div class="actions-row">
           <a class="btn" href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">Siteye Giriş Yap</a>
           <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank" rel="noopener">Telegram</a>
@@ -99,23 +92,12 @@
       <div class="card">
         <span class="badge">Deneme Bonusu</span>
         <h3>Zbahis</h3>
-        <p class="muted">1.000 TL Deneme Bonusu</p>
+        <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
         <div class="actions-row">
           <a class="btn" href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">Siteye Giriş Yap</a>
           <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank" rel="noopener">Telegram</a>
         </div>
       </div>
-    </div>
-
-    <!-- Oynadığım Siteler -->
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-top:26px">
-      <h2 style="margin:0">Oynadığım Siteler</h2>
-      <span class="badge">Güncel yönlendirme</span>
-    </div>
-    <div class="pill-grid">
-      <div class="pill"><span><strong>Zbahis</strong></span><a href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">Git</a></div>
-      <div class="pill"><span><strong>Matadorbet</strong></span><a href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">Git</a></div>
-      <div class="pill"><span><strong>Fixbet</strong></span><a href="https://cutt.ly/arxVbegk" target="_blank" rel="noopener">Git</a></div>
     </div>
   </main>
 
@@ -129,31 +111,41 @@
       <!-- Deneme bonusu görsel alanı -->
       <div class="promo">
         <div class="promo-img">
-          <!-- Görsel eklemek için src'yi ayarla. Boş bırakırsan alttaki yer tutucu görünecek. -->
-          <img id="promoImg" src="" alt="Deneme Bonusu Görseli" style="display:none"/>
-          <span class="placeholder" id="promoPlaceholder">Deneme bonusu görselini eklemek için <code>#promoImg</code> öğesinin <code>src</code> değerini belirle.</span>
+          <!-- Banner görselin -->
+          <img id="promoImg" src="sosyal.jpg" alt="Deneme Bonusu Banneri"/>
         </div>
 
-        <!-- 3 site link kartı + logo alanı -->
+        <!-- 3 site link kartı + logo -->
         <div class="link-list">
           <div class="link-card">
             <div class="link-left">
-              <img id="logoZbahis" src="zbahis.png" alt="Zbahis Logo" />
-              <div><strong>ZBAHİS</strong><div class="brand-sub">1.000 TL Deneme Bonusu</div></div>
+              <img src="zbahis logo.gif" alt="Zbahis Logo" />
+              <div>
+                <strong>ZBAHİS</strong>
+                <div class="brand-sub">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
+              </div>
             </div>
             <a href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">Giriş</a>
           </div>
+
           <div class="link-card">
             <div class="link-left">
-              <img id="logoMatador" src="matadorbet.png" alt="Matadorbet Logo" />
-              <div><strong>Matadorbet</strong><div class="brand-sub">30.000 TL Hoş Geldin</div></div>
+              <img src="matador beyaz (4).png" alt="Matadorbet Logo" />
+              <div>
+                <strong>Matadorbet</strong>
+                <div class="brand-sub">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
+              </div>
             </div>
             <a href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">Giriş</a>
           </div>
+
           <div class="link-card">
             <div class="link-left">
-              <img id="logoFixbet" src="fixbet.png" alt="Fixbet Logo" />
-              <div><strong>Fixbet</strong><div class="brand-sub">30.000 TL Hoş Geldin</div></div>
+              <img src="Fixbet-Logo.png" alt="Fixbet Logo" />
+              <div>
+                <strong>Fixbet</strong>
+                <div class="brand-sub">30.000 TL Hoş Geldin + 1.000 TL Deneme</div>
+              </div>
             </div>
             <a href="https://cutt.ly/arxVbegk" target="_blank" rel="noopener">Giriş</a>
           </div>
@@ -166,17 +158,5 @@
       </div>
     </div>
   </div>
-
-  <script>
-    // Eğer pop-up görselini eklediysen, yer tutucuyu gizle:
-    (function(){
-      const img = document.getElementById('promoImg');
-      if (img && img.getAttribute('src')) {
-        img.style.display = 'block';
-        const ph = document.getElementById('promoPlaceholder');
-        if (ph) ph.style.display = 'none';
-      }
-    })();
-  </script>
 </body>
 </html>
