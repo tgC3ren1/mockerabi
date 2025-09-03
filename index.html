@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mocker • Sponsorlar</title>
+  <meta name="description" content="Mocker tarafından önerilen siteler: Fixbet, Matadorbet, Zbahis." />
+  <style>
+    :root{
+      --bg:#0f1623; --panel:#121a2a; --card:#14233e; --text:#e7edf7; --muted:#9bb0ce;
+      --primary:#4cc9f0; --radius:12px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
+    /* Sidebar */
+    .sidebar{width:220px;background:var(--panel);position:fixed;top:0;bottom:0;padding:20px;border-right:1px solid #1e2b45}
+    .logo{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+    .logo img{height:32px;width:32px;object-fit:contain;border-radius:8px}
+    .brand{font-size:20px;font-weight:800;line-height:1}
+    .brand-sub{font-size:12px;color:var(--muted)}
+    /* Main */
+    .main{margin-left:240px;padding:20px 22px 60px}
+    h2{margin:6px 0 14px}
+    /* Cards */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media (max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr;margin-left:-10px;margin-right:-10px}}
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid #22365c}
+    .card h3{margin:0 0 8px}
+    .muted{color:var(--muted);margin:0 0 8px}
+    .badge{display:inline-block;font-size:12px;color:var(--muted);border:1px solid #2a406a;padding:5px 8px;border-radius:999px;margin-bottom:8px}
+    .actions-row{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 14px;background:var(--primary);color:#0f1623;text-decoration:none;border-radius:8px;font-weight:800}
+    .btn.ghost{background:#0f1a31;color:var(--text);border:1px solid #27406b}
+    /* Pills (Oynadığım Siteler) */
+    .pill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+    @media (max-width:1024px){.pill-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.pill-grid{grid-template-columns:1fr}}
+    .pill{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:999px;background:#101a2e;border:1px solid #20375f}
+    .pill a{padding:6px 10px;border-radius:8px;background:var(--primary);color:#0b1220;font-weight:800;text-decoration:none}
+    /* Modal (Pop-up) */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(5,10,20,.65);display:flex;align-items:center;justify-content:center;z-index:50}
+    .modal{width:min(620px,92%);background:#162747;border-radius:20px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.4);border:1px solid #28406a}
+    .modal h3{margin:6px 0 8px}
+    .modal p{color:var(--muted);line-height:1.55;margin:0 0 10px}
+    .promo{display:grid;gap:12px;margin:12px 0}
+    .promo-img{width:100%; aspect-ratio:16/9; border-radius:14px; background:#0d1730; border:1px solid #243a63; display:grid; place-items:center; overflow:hidden}
+    .promo-img img{width:100%; height:100%; object-fit:cover; display:block}
+    .placeholder{opacity:.65;font-size:14px}
+    .link-list{display:grid;gap:10px}
+    .link-card{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#0f1a31;border:1px solid #27406b;border-radius:12px;padding:12px}
+    .link-left{display:flex;align-items:center;gap:10px}
+    .link-left img{width:28px;height:28px;object-fit:contain;border-radius:6px;background:#152543}
+    .link-card a{font-weight:800;text-decoration:none;color:var(--text)}
+    .modal-actions{display:flex;gap:10px;margin-top:14px}
+    .modal-actions a,.modal-actions button{flex:1;padding:12px;border-radius:12px;border:none;font-weight:800;cursor:pointer;text-align:center}
+    .modal-actions a.primary{background:var(--primary);color:#0f1623;text-decoration:none}
+    .modal-actions button{background:#0f1a31;color:var(--text);border:1px solid #27406b}
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <!-- MOCKER yazısının yanındaki logo: src'yi kendi PNG/SVG'nle değiştir -->
+      <img src="logo.png" alt="Mocker Logo"/>
+      <div>
+        <div class="brand">MOCKER</div>
+        <div class="brand-sub">Oynadığım Siteler</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <h2>Önerdiğim Siteler</h2>
+    <div class="grid">
+      <!-- Fixbet -->
+      <div class="card">
+        <span class="badge">Mocker Öneriyor</span>
+        <h3>Fixbet</h3>
+        <p class="muted">30.000 TL Hoş Geldin Bonusu</p>
+        <div class="actions-row">
+          <a class="btn" href="https://cutt.ly/arxVbegk" target="_blank" rel="noopener">Siteye Giriş Yap</a>
+          <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+      <!-- Matadorbet -->
+      <div class="card">
+        <span class="badge">Global • VIP</span>
+        <h3>Matadorbet</h3>
+        <p class="muted">30.000 TL Hoş Geldin Bonusu</p>
+        <div class="actions-row">
+          <a class="btn" href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">Siteye Giriş Yap</a>
+          <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+      <!-- Zbahis -->
+      <div class="card">
+        <span class="badge">Deneme Bonusu</span>
+        <h3>Zbahis</h3>
+        <p class="muted">1.000 TL Deneme Bonusu</p>
+        <div class="actions-row">
+          <a class="btn" href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">Siteye Giriş Yap</a>
+          <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Oynadığım Siteler -->
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-top:26px">
+      <h2 style="margin:0">Oynadığım Siteler</h2>
+      <span class="badge">Güncel yönlendirme</span>
+    </div>
+    <div class="pill-grid">
+      <div class="pill"><span><strong>Zbahis</strong></span><a href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">Git</a></div>
+      <div class="pill"><span><strong>Matadorbet</strong></span><a href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">Git</a></div>
+      <div class="pill"><span><strong>Fixbet</strong></span><a href="https://cutt.ly/arxVbegk" target="_blank" rel="noopener">Git</a></div>
+    </div>
+  </main>
+
+  <!-- Giriş Pop-up -->
+  <div id="pop" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="badge">Duyuru</div>
+      <h3>Mocker • Resmi Yönlendirme Sayfası</h3>
+      <p>Bu sayfada <strong>Fixbet</strong>, <strong>Matadorbet</strong> ve <strong>Zbahis</strong> için güncel giriş bağlantıları ve kampanya duyurularını bulabilirsiniz. Sosyal medya hesaplarımızın tamamı <strong>Telegram @mockerabi1</strong> üzerinden doğrulanır.</p>
+
+      <!-- Deneme bonusu görsel alanı -->
+      <div class="promo">
+        <div class="promo-img">
+          <!-- Görsel eklemek için src'yi ayarla. Boş bırakırsan alttaki yer tutucu görünecek. -->
+          <img id="promoImg" src="" alt="Deneme Bonusu Görseli" style="display:none"/>
+          <span class="placeholder" id="promoPlaceholder">Deneme bonusu görselini eklemek için <code>#promoImg</code> öğesinin <code>src</code> değerini belirle.</span>
+        </div>
+
+        <!-- 3 site link kartı + logo alanı -->
+        <div class="link-list">
+          <div class="link-card">
+            <div class="link-left">
+              <img id="logoZbahis" src="zbahis.png" alt="Zbahis Logo" />
+              <div><strong>ZBAHİS</strong><div class="brand-sub">1.000 TL Deneme Bonusu</div></div>
+            </div>
+            <a href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">Giriş</a>
+          </div>
+          <div class="link-card">
+            <div class="link-left">
+              <img id="logoMatador" src="matadorbet.png" alt="Matadorbet Logo" />
+              <div><strong>Matadorbet</strong><div class="brand-sub">30.000 TL Hoş Geldin</div></div>
+            </div>
+            <a href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">Giriş</a>
+          </div>
+          <div class="link-card">
+            <div class="link-left">
+              <img id="logoFixbet" src="fixbet.png" alt="Fixbet Logo" />
+              <div><strong>Fixbet</strong><div class="brand-sub">30.000 TL Hoş Geldin</div></div>
+            </div>
+            <a href="https://cutt.ly/arxVbegk" target="_blank" rel="noopener">Giriş</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <a class="primary" href="https://t.me/mockerabi1" target="_blank" rel="noopener">Telegram’a Git</a>
+        <button onclick="document.getElementById('pop').style.display='none'">Siteye Devam Et</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Eğer pop-up görselini eklediysen, yer tutucuyu gizle:
+    (function(){
+      const img = document.getElementById('promoImg');
+      if (img && img.getAttribute('src')) {
+        img.style.display = 'block';
+        const ph = document.getElementById('promoPlaceholder');
+        if (ph) ph.style.display = 'none';
+      }
+    })();
+  </script>
+</body>
+</html>
