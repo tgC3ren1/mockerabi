@@ -23,13 +23,13 @@
 
     h2{margin:8px 0 14px}
 
-    /* Kayan logo header */
+    /* Kayan logo header (Sadece Zbahis, Matadorbet, Fixbet) */
     .logo-marquee{
       overflow:hidden;
       background:#141f33;
       border-bottom:1px solid #213353;
       padding:10px 0;
-      margin-left:240px; /* sidebar genişliği kadar */
+      margin-left:240px; /* sidebar genişliği */
     }
     .marquee-track{
       display:flex;
@@ -37,14 +37,16 @@
       animation:scrollLogos 25s linear infinite;
       width:max-content;
     }
-    .marquee-track img{
+    .marquee-track a img{
       height:40px;
       object-fit:contain;
       filter:drop-shadow(0 1px 2px rgba(0,0,0,.3));
+      transition:transform .2s;
     }
-    @keyframes scrollLogos {
-      0% { transform:translateX(100%); }
-      100% { transform:translateX(-100%); }
+    .marquee-track a:hover img{ transform:scale(1.1); }
+    @keyframes scrollLogos{
+      0%{transform:translateX(100%)}
+      100%{transform:translateX(-100%)}
     }
 
     /* Kartlar */
@@ -109,18 +111,28 @@
     </div>
   </aside>
 
-  <!-- Kayan Logo Header -->
+  <!-- Kayan Logo Header (linkli) -->
   <div class="logo-marquee">
     <div class="marquee-track">
-      <img src="zbahis logo.gif" alt="Zbahis">
-      <img src="matador beyaz (4).png" alt="Matadorbet">
-      <img src="Fixbet-Logo.png" alt="Fixbet">
-      <img src="gamdom.png" alt="Gamdom">
-      <img src="radisson.png" alt="RadissonBet">
-      <!-- tekrar eklersen sonsuz döngü daha akıcı olur -->
-      <img src="zbahis logo.gif" alt="Zbahis">
-      <img src="matador beyaz (4).png" alt="Matadorbet">
-      <img src="Fixbet-Logo.png" alt="Fixbet">
+      <a href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">
+        <img src="zbahis logo.gif" alt="Zbahis">
+      </a>
+      <a href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">
+        <img src="matador beyaz (4).png" alt="Matadorbet">
+      </a>
+      <a href="https://cutt.ly/arxVbegk" target="_blank" rel="noopener">
+        <img src="Fixbet-Logo.png" alt="Fixbet">
+      </a>
+      <!-- kesintisiz akış için tekrar -->
+      <a href="https://cutt.ly/TrU19yvl" target="_blank" rel="noopener">
+        <img src="zbahis logo.gif" alt="Zbahis">
+      </a>
+      <a href="https://cutt.ly/ErxVvFwo" target="_blank" rel="noopener">
+        <img src="matador beyaz (4).png" alt="Matadorbet">
+      </a>
+      <a href="https://cutt.ly/arxVbegk" target="_blank" rel="noopener">
+        <img src="Fixbet-Logo.png" alt="Fixbet">
+      </a>
     </div>
   </div>
 
@@ -143,7 +155,7 @@
         <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
         <div class="actions-row">
           <a class="btn" href="https://cutt.ly/TrU19yvl" target="_blank">Siteye Giriş Yap</a>
-          <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank">Telegram</a>
+          <a class="btn.ghost btn" href="https://t.me/mockerabi1" target="_blank">Telegram</a>
         </div>
       </div>
 
@@ -162,7 +174,7 @@
         <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
         <div class="actions-row">
           <a class="btn" href="https://cutt.ly/ErxVvFwo" target="_blank">Siteye Giriş Yap</a>
-          <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank">Telegram</a>
+          <a class="btn.ghost btn" href="https://t.me/mockerabi1" target="_blank">Telegram</a>
         </div>
       </div>
 
@@ -181,7 +193,7 @@
         <p class="muted">30.000 TL Hoş Geldin Bonusu + 1.000 TL Deneme Bonusu</p>
         <div class="actions-row">
           <a class="btn" href="https://cutt.ly/arxVbegk" target="_blank">Siteye Giriş Yap</a>
-          <a class="btn ghost" href="https://t.me/mockerabi1" target="_blank">Telegram</a>
+          <a class="btn.ghost btn" href="https://t.me/mockerabi1" target="_blank">Telegram</a>
         </div>
       </div>
     </div>
@@ -220,7 +232,7 @@
     <!-- GLOBAL SİTELER -->
     <section class="global-wrap">
       <div class="section-head">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm7.93 9H16.9a18.7 18.7 0 00-1.2-6.02A8.01 8.01 0 0119.93 11zM12 4.06c1.14 1.6 2.02 3.94 2.35 6.94H9.65c.33-3 1.21-5.34 2.35-6.94zM4.07 13h3.03c.19 2.27.76 4.3 1.6 5.88A8.01 8.01 0 014.07 13zm3.03-2H4.07A8.01 8.01 0 018.7 5.14C7.86 6.72 7.29 8.75 7.1 11zM12 19.94c-1.14-1.6-2.02-3.94-2.35-6.94h4.7c-.33 3-1.21 5.34-2.35 6.94zM15.27 18.88c.84-1.58 1.41-3.6 1.6-5.88h3.06a8.01 8.01 0 01-4.66 5.88z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm7.93 9H16.9a18.7 18.7 0 00-1.2-6.02A8.01 8.01 0 0119.93 11zM12 4.06c1.14 1.6 2.02 3.94 2.35 6.94H9.65c.33-3 1.21-5.34 2.35-6.94zM4.07 13h3.03c.19 2.27.76 4.3 1.6 5.88A8.01 8.01 0 014.07 13zm3.03-2H4.07A8.01 8.01 0 018.7 5.14C7.86 6.72 7.29 8.75 7.1 11zM12 19.94c-1.14-1.6-2.02-3.94-2.35-6.94h4.7c-.33 3-1.21 5.34-2.35 6.94zM15.27 18.88c.84-1.58 1.41-3.6 1.6-5.88h3.06a8.01 8.01 0 01-4.66 5.88z"/></svg>
         <h2 style="margin:0">GLOBAL SİTELER</h2>
       </div>
       <div class="global-list">
